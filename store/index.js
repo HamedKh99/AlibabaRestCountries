@@ -8,6 +8,7 @@ export const useStore = defineStore('store', () => {
     const regionFilter = ref('');
     const loadingCountries = ref(false);
     const fetchError = ref('');
+    const themeMode = ref('light');
 
     function updateCountries(newCountries) {
         countries.value = newCountries;
@@ -49,8 +50,22 @@ export const useStore = defineStore('store', () => {
         } finally {
             setLoadingCountries(false);
         }
-
     };
+
+    function setThemeMode(mode) {
+        themeMode.value = mode;
+    }
+
+    function toggleDarkMode() {
+        const currentMode = localStorage.getItem("theme-mode");
+        if (currentMode === "dark") {
+            localStorage.setItem("theme-mode", "light");
+            themeMode.value = "light";
+        } else {
+            localStorage.setItem("theme-mode", "dark");
+            themeMode.value = "dark";
+        }
+    }
 
     return {
         countries,
@@ -58,8 +73,11 @@ export const useStore = defineStore('store', () => {
         searchQuery,
         regionFilter,
         fetchError,
+        themeMode,
         setSearchQuery,
         setRegionFilter,
         fetchCountries,
+        toggleDarkMode,
+        setThemeMode,
     };
 })

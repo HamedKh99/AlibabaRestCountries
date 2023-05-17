@@ -5,6 +5,7 @@ const props = defineProps({
   flags: Object,
   population: Number,
   region: String,
+  cioc: String,
   capital: {
     type: Array,
     default: [],
@@ -16,14 +17,14 @@ const populationString = computed(() => props.population.toString().replace(/\B(
 
 <template>
   <div class="max-w-sm bg-white dark:bg-gray-700 rounded-md shadow-md pb-4">
-    <a href="#">
+    <NuxtLink :to="`/${cioc}`">
       <img class="rounded-t-md" :src="flags.png" alt="" />
-    </a>
+    </NuxtLink>
 
     <div class="p-6">
-      <a href="#">
+      <NuxtLink :to="`/${cioc}`">
         <h5 class="mb-2 text-xl dark:text-white font-bold tracking-tight pb-2">{{ name.common }}</h5>
-      </a>
+      </NuxtLink>
       
       <country-data data-key="Population" :data-value="populationString"/>
 

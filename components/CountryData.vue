@@ -8,9 +8,9 @@ defineProps({
 </script>
 
 <template>
-  <span class="font-medium dark:text-white">{{ dataKey }}</span>
+  <div class="py-0.5">
+    <span class="text-gray-800 dark:text-white">{{ dataKey }}</span>
 
-  <span class="font-normal dark:text-white">{{ `: ${dataValue}` }}</span>
-
-  <br />
+    <span class="font-thin text-gray-600 dark:text-white">{{ `: ${dataValue}` }}</span>
+  </div>
 </template>

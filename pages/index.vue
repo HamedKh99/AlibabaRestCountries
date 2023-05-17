@@ -27,10 +27,10 @@ onMounted(async () => {
 
 <template>
     <div>
-        <div class="flex flex-row justify-between px-12 py-12">
-            <search-input class="basis-2/5" />
+        <div class="flex min-[768px]:flex-row max-[768px]:flex-col min-[768px]:justify-between px-12 py-12">
+            <search-input class="min-[768px]:basis-2/5" />
 
-            <filter-dropdown class="basis-1/6" />
+            <filter-dropdown class="min-[768px]:basis-1/6 max-[768px]:w-1/2 max-[768px]:mt-8" />
         </div>
 
         <countries-section-skeleton v-if="loadingCountries" />

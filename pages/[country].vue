@@ -28,7 +28,7 @@ loading.value = false;
             <Icon name="eos-icons:loading" size="24" />
         </div>
 
-        <div v-else class="grid grid-cols-2 gap-8 mt-8 mx-auto">
+        <div v-else class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 mt-8 mx-auto">
             <div>
                 <img class="w-5/6" :src="fetchedCountryData.flags.png" alt="" />
             </div>

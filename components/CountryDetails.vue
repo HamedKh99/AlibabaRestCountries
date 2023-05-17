@@ -42,7 +42,7 @@ const languagesString = computed(() => Object.values(props.languages));
     <div class="flex flex-col justify-around py-4">
         <h1 class="text-2xl font-bold dark:text-white">{{ name.common }}</h1>
 
-        <div class="grid grid-cols-2 gap-4 my-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-12">
             <div>
                 <country-data data-key="Native Name" :data-value="name.common" />
                 <country-data data-key="Population" :data-value="populationString" />
@@ -60,6 +60,7 @@ const languagesString = computed(() => Object.values(props.languages));
 
         <div>
             <span class="text-gray-800 dark:text-white mr-2">Border Countries:</span>
+            <br class="md:hidden"/>
             <NuxtLink v-for="borderCountry in borders" :to="`/${borderCountry}`" type="button"
                 class="px-4 mx-1 text-center dark:bg-gray-700 rounded-sm shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] outline-none">
                 <span class="dark:text-white font-thin"> {{ borderCountry }} </span>

@@ -18,7 +18,7 @@ const populationString = computed(() => props.population.toString().replace(/\B(
 <template>
   <div class="max-w-sm bg-white dark:bg-gray-700 rounded-md shadow-md pb-4">
     <NuxtLink :to="`/${cioc}`">
-      <img class="rounded-t-md" :src="flags.png" alt="" />
+      <img class="rounded-t-md min-w-full" :src="flags.png" alt="" />
     </NuxtLink>
 
     <div class="p-6">
